@@ -89,6 +89,13 @@ RCT_EXPORT_METHOD(trackEvent: (NSString* _Nonnull)category action:(NSString* _No
     [[PiwikTracker sharedInstance] sendEventWithCategory:category action:action name:name value:value];
 }
 
+RCT_EXPORT_METHOD(trackDimension)
+{
+#if DEBUG
+    RCTLogInfo(@"Unsupported on iOS");
+#endif
+}
+
 RCT_EXPORT_METHOD(trackAppDownload)
 {
 #if DEBUG
