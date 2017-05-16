@@ -15,5 +15,8 @@ module.exports = {
   },
   trackScreen: function(screen, title) {
     Piwik.trackScreen(screen, title);
+  },
+  trackDimension: function(slot, value) {
+    Piwik.trackDimension(slot, value);
   }
 };
