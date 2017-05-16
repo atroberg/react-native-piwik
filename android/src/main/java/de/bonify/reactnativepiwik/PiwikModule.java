@@ -86,6 +86,14 @@ public class PiwikModule extends ReactContextBaseJavaModule implements Lifecycle
         TrackHelper.track().download().with(mPiwikTracker);
     }
 
+    @ReactMethod
+    public void trackDimension(int slot, @NonNull String value) {
+        if (mPiwikTracker == null) {
+            throw new RuntimeException("Tracker must be initialized before usage");
+        }
+        TrackHelper.dimension(slot, value).with(mPiwikTracker);
+    }
+
     @Override
     public String getName() {
         return "Piwik";
